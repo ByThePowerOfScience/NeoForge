@@ -38,7 +38,7 @@ abstract class RemapJar extends JavaExec {
         args("--input", getInputJar().get().getAsFile().getAbsolutePath());
         args("--output", getOutputJar().get().getAsFile().getAbsolutePath());
         args("--names", getMappings().get().getAsFile().getAbsolutePath());
-        args("--ann-fix", "--ids-fix", "--src-fix", "--record-fix");
+        args("--ann-fix", "--ids-fix", "--src-fix", "--record-fix", "--unfinal-params");
 
         var logFile = new File(getTemporaryDir(), "console.log");
         try (var out = new BufferedOutputStream(new FileOutputStream(logFile))) {
